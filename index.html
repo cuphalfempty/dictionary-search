@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Double-click dictionary search</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <h1>Double-click dictionary search</h1>
+    <p><a href="http://dictionary.cambridge.org/doubleclick.html" title="Cambridge Dictionaries Online">Double-click dictionary search</a> in bookmarklet. Drag the <a href="javascript: (function(){
+        function executeDblclick() {
+            setupDoubleClick('http://dictionary.cambridge.org/', 'british', false, null, 5, 'popup');
+        }
+
+        function loadDblclick() {
+            if ('function' == typeof setupDoubleClick) {
+                return;
+            }
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'http://dictionary.cambridge.org/external/scripts/dblclick.js';
+            script.onload = executeDblclick;
+            document.body.appendChild(script);
+        }
+
+        if ( ! ($ = window.jQuery) ) {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'http://poligon.local/dictionary-bookmarklet/jquery.min.js';
+            script.onload = loadDblclick;
+            document.body.appendChild(script);
+        } else {
+            loadDblclick();
+        }
+        }())" title="Double-click dictionary search">link</a> to your bookmarks. Click it when you need it.</p>
+</body>
+</html>
